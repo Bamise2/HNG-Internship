@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="profile-card">
+        <img src="./profile.png" alt="Profile Picture" data-testid="profilePicture" width="200" height="200">
+        <h1 data-testid="fullName">Shogbesan Oluwabamise</h1>
+        <h2 data-testid="jobTitle">Front-end Developer</h2>
+        <p data-testid="shortBio">I’m a frontend developer passionate about building dynamic, user-friendly web applications. Currently exploring frameworks like React, I’m committed to enhancing my skills to build innovative, interactive solutions. My goal is to combine creativity with technical expertise to craft high-quality applications that solve real-world problems and make a meaningful impact.</p>
+
+        <p data-testid="currentLocation">Ibadan, Nigeria</p>
+        <p data-testid="emailAddress"><a href="mailto:bamiseshogbesan2004@gmail.com">bamiseshogbesan2004@gmail.com</a></p>
+        <div data-testid="socialLinks">
+            <a href="https://github.com/Bamise2" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://x.com/bamisho" target="_blank" rel="noopener noreferrer">Twitter</a>
+        </div>
+        <p data-testid="currentTimeUTC">Current UTC Time: <span id="utcTime"></span></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  
+  .profile-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  img[data-testid="profilePicture"] {
+    border-radius: 10%;
+    margin-bottom: 1rem;
+  }
+  
+  h1[data-testid="fullName"] {
+    margin: 0;
+    color: #333;
+  }
+  
+  h2[data-testid="jobTitle"] {
+    margin: 0.5rem 0;
+    color: #666;
+    font-weight: normal;
+  }
+  
+  p[data-testid="shortBio"] {
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  p[data-testid="currentLocation"],
+  p[data-testid="emailAddress"] {
+    color: #666;
+    margin: 0.5rem 0;
+  }
+  
+  div[data-testid="socialLinks"] {
+    margin: 1rem 0;
+  }
+  
+  div[data-testid="socialLinks"] a {
+    display: inline-block;
+    margin: 0 0.5rem;
+    color: #0077b5;
+    text-decoration: none;
+  }
+  
+  div[data-testid="socialLinks"] a:hover {
+    text-decoration: underline;
+  }
+  
+  p[data-testid="currentTimeUTC"] {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  @media (max-width: 480px) {
+    .profile-card {
+      padding: 1rem;
+    }
+  
+    img[data-testid="profilePicture"] {
+      width: 150px;
+      height: 150px;
+    }
+  
+    h1[data-testid="fullName"] {
+      font-size: 1.5rem;
+    }
+  
+    h2[data-testid="jobTitle"] {
+      font-size: 1.2rem;
+    }
+  }
+  
+  
