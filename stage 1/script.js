@@ -16,19 +16,30 @@ const colors = [
 const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
 
 const updateStatus = (message, isCorrect) => {
-  statusElement.textContent = message;
-  statusElement.classList.toggle("correct", isCorrect);
-  statusElement.classList.toggle("wrong", !isCorrect);
-  statusElement.classList.add(isCorrect ? "correctAnimation" : "wrongAnimation");
-  statusElement.classList.add(isCorrect ? "scoreIncreaseAnimation" : "scoreDecreaseAnimation");
-
-  scoreTrack.classList.toggle("scoreIncrease", isCorrect);
-  scoreTrack.classList.toggle("scoreDecrease", !isCorrect);
-
-  statusElement.addEventListener("animationend", () => {
-    statusElement.classList.remove("correctAnimation", "wrongAnimation", "scoreIncreaseAnimation", "scoreDecreaseAnimation");
-  });
-};
+    statusElement.textContent = message;
+    
+    // Ensure correct and wrong classes are applied properly
+    statusElement.classList.remove("correct", "wrong");
+    statusElement.classList.add(isCorrect ? "correct" : "wrong");
+  
+    // Add the correct animation
+    statusElement.classList.add(isCorrect ? "correctAnimation" : "wrongAnimation");
+    scoreTrack.classList.add(isCorrect ? "scoreIncreaseAnimation" : "scoreDecreaseAnimation");
+  
+    // Ensure score changes correctly
+    scoreTrack.classList.remove("scoreIncrease", "scoreDecrease");
+    scoreTrack.classList.add(isCorrect ? "scoreIncrease" : "scoreDecrease");
+  
+    // Remove animations after they complete
+    const removeAnimations = () => {
+      statusElement.classList.remove("correctAnimation", "wrongAnimation");
+      scoreTrack.classList.remove("scoreIncreaseAnimation", "scoreDecreaseAnimation");
+    };
+  
+    statusElement.addEventListener("animationend", removeAnimations, { once: true });
+    scoreTrack.addEventListener("animationend", removeAnimations, { once: true });
+  };
+  
 
 const updateScore = (points) => {
   score = Math.max(0, score + points);

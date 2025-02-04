@@ -38,20 +38,20 @@ body{
 
 .scoreIncrease {
     color: green;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .scoreIncreaseAnimation{
-    animation: pop .3s ease-in
+    animation: pop .2s ease-in-out
 }
 
 .scoreDecrease {
     color: red;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 .scoreDecreaseAnimation{
-    animation: pop .3s ease-out
+    animation: pop .2s ease-in-out
 }
 
 
