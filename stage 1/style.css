@@ -1,0 +1,152 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: #f4f4f4;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    height: 100vh;
+    display: flex;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    max-width: 500px;
+    background-color: #fff;
+    margin: auto;
+    align-items: center;
+    box-shadow: 2px 2px 20px rgba(93, 82, 82, 0.5);
+}
+
+.score {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 30px 0;
+}
+
+/* Score animation */
+.scoreChangeEffect {
+    transition: all 0.3s ease-in-out;
+}
+
+.scoreIncrease {
+    color: green;
+    font-size: 1rem;
+    
+}
+
+.scoreDecrease {
+    color: red;
+    font-size: .9rem;
+    animation: pop .3s ease-in-out
+}
+
+
+/* correct guess */
+.correct {
+    color: green;
+    font-size: 1rem;
+    
+}
+
+.correctAnimation{
+    animation: pop 0.3s ease-in-out;
+}
+
+/* Correct pop-in animation */
+@keyframes pop {
+    0% { opacity: 0; transform: scale(0.8); font-size: 0.8rem; }
+    100% { opacity: 1; transform: scale(.9); font-size: 1rem; }
+}
+
+@keyframes popOut {
+    0% { opacity: 0; transform: scale(0.9); font-size: 0.8rem; }
+    100% { opacity: 1; transform: scale(.7); font-size: .5rem; }
+}
+
+/* Wrong Guess */
+.wrong {
+    color: red;
+    font-size: 1rem;
+    
+}
+
+.wrongAnimation{
+    animation: pop 0.3s ease-in-out;
+}
+
+
+
+.targetColor{
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    background-color: red;
+    border-radius: 20px;
+}
+
+.colorOptions{
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    height: 40%;
+    width: 75%;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+
+.colorOption{
+
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgba(29, 29, 29, 0.5);
+    cursor: pointer;
+    transition: .4s ease-in-out box-shadow;
+}
+
+.colorOption:hover {
+    box-shadow: none;
+}
+
+
+button{
+    color: white;
+    background-color: rgb(118, 118, 241);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    box-shadow: 2px 2px 3px rgba(35, 35, 36, 0.9w);
+    transition: .3s ease-in-out background-color, box-shadow;
+}
+
+button:hover{
+    background-color: rgb(92, 92, 169); 
+    box-shadow: none;
+}
+
+
+
+
+@media screen  and (max-width: 800px) {
+    .container{
+        min-height: 100vh;
+        align-items: center;
+        max-width: 100%;
+    }
+    .score{
+        font-size: 10px;
+    }
+    
+}
